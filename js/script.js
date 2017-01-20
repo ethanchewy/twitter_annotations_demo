@@ -11,6 +11,11 @@ $( document ).ready(function(){
            });
           app.start();
       }
+    jQuery("#clear-storage").click(function () {
+      if (app) {
+        app.plugins.store.clear();
+      }
+    });
 
 });
         
