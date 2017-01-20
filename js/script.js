@@ -7,10 +7,12 @@ $( document ).ready(function(){
               element: document.querySelector('#tweet-content'),
             })
             .include(annotatorImageSelect, {
-              element: $('.NaturalImage-image'),
+              element: $('img'),
            });
           app.start();
       }
+
+        
 
 });
         

@@ -1,49 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Annotator-imgselect demo</title>
-<style type="text/css">@import url("https://platform.twitter.com/css/tweet.3a5bba37d8a97ff1a6185653efe28c38.light.ltr.css");</style>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
-    <link href="css/annotator.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="src/jquery.imgareaselect-0.9.10/css/imgareaselect-default.css"/>
+<html>
+<head>
+<title>Twitter Annotation Demo</title>
+ <style type="text/css">@import url("https://platform.twitter.com/css/tweet.3a5bba37d8a97ff1a6185653efe28c38.light.ltr.css");</style>
+<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+<link href="css/annotator.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="css/imgareaselect-default.css"/>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
-    <style>
-      body {
-        letter-spacing: 0.01rem;
-        font-size: 22px;
-        line-height: 1.5;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-      }
-      header, article {
-        width: 1000px;
-        margin: 2em auto;
-        position: relative;
-        z-index: 2;
-      }
-      .highlight {
-        background: rgba(255, 10, 10, 0.3);
-      }
-      .inner{
-        background: white;
-      }
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster" />
+<link href='https://fonts.googleapis.com/css?family=Ubuntu|Poiret+One|Roboto+Condensed|Raleway|Muli|Quicksand' rel='stylesheet' type='text/css'>
 
-      .content img {
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -o-user-select: none;
-      }
-    </style>
-  </head>
-
-  <body>
+<link rel="stylesheet" href="css/style.css" />
 
 
-    <article class="content">
-      <section class="inner" style="position:relative;left:0">
-        <div class="container center" id="total_tweet">
+<!-- Annotation libraries-->
+    <script type="text/javascript" src="js/annotator.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.imgareaselect.min.js"></script>
+    <script type="text/javascript" src="js/annotator.imgselect.js"></script>
+
+
+
+
+<!-- Bootstrap 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+-->
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+</head>
+<body>
+  <div class="navbar navbar-default">
+    <div class="companyInfo">
+        <i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
+        <h1 class="companyName"><a href="index.html" id="title">Twitter Annotation Demo</a></h1>
+      </div>
+  </div>
+  <br><br><br>
+  <br><br><br>
+  <!-- Annotation can only wrap around p tags or text only filled tags-->
+  <div class="container center" id="total_tweet">
 
       <div class="EmbeddedTweet EmbeddedTweet--mediaForward media-forward js-clickToOpenTarget js-tweetIdInfo" data-click-to-open-target="https://twitter.com/CNN/status/822188640214413312" data-iframe-title="Twitter Tweet" data-dt-full="%{hours12}:%{minutes} %{amPm} - %{day} %{month} %{year}" data-dt-months="Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec" data-dt-am="AM" data-dt-pm="PM" data-dt-now="now" data-dt-s="s" data-dt-m="m" data-dt-h="h" data-dt-second="second" data-dt-seconds="seconds" data-dt-minute="minute" data-dt-minutes="minutes" data-dt-hour="hour" data-dt-hours="hours" data-dt-abbr="%{number}%{symbol}" data-dt-short="%{day} %{month}" data-dt-long="%{day} %{month} %{year}" data-scribe="page:tweet" data-tweet-id="822188640214413312" id="twitter-widget-0" lang="en" data-twitter-event-id="1">
       
@@ -55,10 +51,8 @@
                
                customisable-border" data-scribe="component:card" dir="ltr">
       <div class="MediaCard-media">
-    <div style="position:relative;display:inline-block">
-             
-      <img class="NaturalImage-image" data-srcset="https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FC2kANaXUcAEajwd.jpg%3Asmall 640w,https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FC2kANaXUcAEajwd.jpg%3Alarge 640w,https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FC2kANaXUcAEajwd.jpg 640w" width="640" height="360" title="View image on Twitter" alt="View image on Twitter" src="https://pbs.twimg.com/media/C2kANaXUcAEajwd.jpg:small">
-    </div>
+                
+    <img class="NaturalImage-image" data-srcset="https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FC2kANaXUcAEajwd.jpg%3Asmall 640w,https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FC2kANaXUcAEajwd.jpg%3Alarge 640w,https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FC2kANaXUcAEajwd.jpg 640w" width="640" height="360" title="View image on Twitter" alt="View image on Twitter" src="https://pbs.twimg.com/media/C2kANaXUcAEajwd.jpg:small">
     </article>
 
       
@@ -129,35 +123,9 @@
      
 
   </div>
-
-      </section>
-    </article>
-
-
-
-    
-
-
-    <!-- The main Annotator script -->
-    <script type="text/javascript" src="js/annotator.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="src/jquery.imgareaselect-0.9.10/scripts/jquery.imgareaselect.min.js"></script>
-    <script type="text/javascript" src="src/annotator.imgselect.js"></script>
-
-    <script type="text/javascript">
-      $( document ).ready()
-        if (typeof annotator === 'undefined') {
-          alert("Oops! Something went wrong and Annotator isn't loaded.");
-      } else {
-        var app = new annotator.App();
-        app.include(annotator.ui.main,{
-              element: document.querySelector('.content .inner'),
-            })
-            .include(annotatorImageSelect, {
-              element: $(' img'),
-           });
-          app.start();
-      }
-    </script>
-  </body>
+  <!--
+  <p><button id="clear-storage">Clear LocalStorage</button></p>
+-->
+  <script src="js/script.js"></script>
+</body>
 </html>
